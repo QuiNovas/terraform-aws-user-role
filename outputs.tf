@@ -3,7 +3,7 @@ output "arn" {
   value       = "${aws_iam_role.role.arn}"
 }
 
-output "" {
+output "unique_id" {
   description = "The stable and unique string identifying the role."
   value       = "${aws_iam_role.role.unique_id}"
 }
