@@ -25,7 +25,7 @@ variable "policy_arn_count" {
 }
 
 variable "provider" {
-  default     = ""
+  default     = "aws"
   description = "The name of a specific provider to use for the resources in this module. The name is in the format of TYPE.ALIAS, for example, aws.west. Where west is set using the alias attribute in a provider."
   type        = "string"
 }
