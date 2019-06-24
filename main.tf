@@ -30,7 +30,7 @@ resource "aws_iam_role_policy_attachment" "role" {
 
 module "group" {
   name               = var.name
-  allowed_user_names = [var.allowed_user_names]
+  allowed_user_names = var.allowed_user_names
   role_arns          = [aws_iam_role.role.arn]
   source             = "QuiNovas/assume-role-group/aws"
   version            = "3.0.0"
