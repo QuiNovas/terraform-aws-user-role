@@ -33,5 +33,5 @@ module "group" {
   allowed_user_names = [var.allowed_user_names]
   role_arns          = [aws_iam_role.role.arn]
   source             = "QuiNovas/assume-role-group/aws"
-  version            = "1.0.16"
+  version            = "3.0.0"
 }
