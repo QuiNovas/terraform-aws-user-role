@@ -21,5 +21,5 @@ variable "policy_arns" {
 
 variable "policy_arn_count" {
   description = "The number of policy arns to attach to the role."
-  type        = string
+  type        = number
 }
