@@ -15,11 +15,7 @@ variable "name" {
 }
 
 variable "policy_arns" {
+  default     = []
   description = "The list of policy arns to attach to the role."
   type        = list(string)
-}
-
-variable "policy_arn_count" {
-  description = "The number of policy arns to attach to the role."
-  type        = number
 }
