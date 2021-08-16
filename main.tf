@@ -20,6 +20,7 @@ data "aws_iam_policy_document" "role" {
 resource "aws_iam_role" "role" {
   assume_role_policy = data.aws_iam_policy_document.role.json
   name               = var.name
+  tags               = var.tags
 }
 
 resource "aws_iam_role_policy_attachment" "role" {
