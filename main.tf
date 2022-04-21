@@ -6,7 +6,7 @@ data "aws_iam_policy_document" "role" {
     condition {
       test = "Bool"
       values = [
-        "true",
+        var.enforce_mfa,
       ]
       variable = "aws:MultiFactorAuthPresent"
     }

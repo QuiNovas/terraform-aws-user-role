@@ -9,6 +9,12 @@ variable "allowed_user_names" {
   type        = list(string)
 }
 
+variable "enforce_mfa" {
+  default     = "true"
+  description = "Only allowed MFA enabled users to switch role, default set to true"
+  type        = string
+}
+
 variable "name" {
   description = "The name of the role."
   type        = string
