@@ -3,13 +3,18 @@ data "aws_iam_policy_document" "role" {
     actions = [
       "sts:AssumeRole",
     ]
-    condition {
-      test = "Bool"
-      values = [
-        var.enforce_mfa,
-      ]
-      variable = "aws:MultiFactorAuthPresent"
+    
+    dynamic "condition" {
+      for_each = var.enforce_mfa ? ["enforce_mfa"] : []
+      content {
+        test = "Bool"
+        values = [
+          "true",
+        ]
+        variable = "aws:MultiFactorAuthPresent"
+      }
     }
+
     principals {
       identifiers = var.allowed_user_arns
       type        = "AWS"

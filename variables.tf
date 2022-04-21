@@ -10,9 +10,9 @@ variable "allowed_user_names" {
 }
 
 variable "enforce_mfa" {
-  default     = "true"
-  description = "Only allowed MFA enabled users to switch role, default set to true"
-  type        = string
+  default     = true
+  description = "Only allow users with MFA to switch role, default set to true"
+  type        = bool
 }
 
 variable "name" {
